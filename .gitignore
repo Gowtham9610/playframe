@@ -1,2 +1,8 @@
-pwenv
-__pycache__
+pwenv/
+playenv/
+venv/
+.venv/
+__pycache__/
+.pytest_cache/
+test-results/
+.env
