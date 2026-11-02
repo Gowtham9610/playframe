@@ -9,7 +9,7 @@ class LoginPage:
     
 
     def navigation(self):
-        self.page.goto("https://the-internet.herokuapp.com/login")
+        self.page.goto("https://the-internet.herokuapp.com/logins")
     
     def login(self,username,password):
         self.username.fill(username)
