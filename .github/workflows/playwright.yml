@@ -27,5 +27,16 @@ jobs:
       - name: Install Chromium
         run: python -m playwright install --with-deps chromium
 
+      # - name: Execute Playwright tests
+      #   run: python -m pytest tests/ -v --browser chromium
+
       - name: Execute Playwright tests
-        run: python -m pytest tests/ -v --browser chromium
+        run: python -m pytest tests/ -v --browser chromium --tracing retain-on-failure --screenshot only-on-failure
+
+      - name: Upload Playwright artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: test-results/
+          if-no-files-found: ignore
